@@ -7,120 +7,93 @@
 </head>
 <body>
 
-<h1 id="toc_1" class="justcenter">使用vimwiki记笔记</h1>
+<h1 id="toc_1" class="justcenter">使用Vimwiki记笔记</h1>
 
 <p>
 为什么选择vimwiki？
 </p>
-
-<p>
+<ul>
+<li>
 基于vim
-</p>
 
-<p>
+<li>
 输出为html
-</p>
 
-<p>
+<li>
 简洁但不简陋
-</p>
+
+</ul>
 
 <p>
-<a href="http://xbeta.info/vimwiki.htm">http://xbeta.info/vimwiki.htm</a> Pkm工具：Vimwiki
+操作步骤:
 </p>
-
-<p>
-<a href="http://www.vim.org/scripts/script.php?script_id=2226">http://www.vim.org/scripts/script.php?script_id=2226</a> vimwiki : Personal Wiki for Vim
-</p>
-
-<p>
-windowsxp
-</p>
-
-<p>
+<ol>
+<li>
 下载vimwiki-2-0-1.vba.gz：<a href="http://www.vim.org/scripts/script.php?script_id=2226">http://www.vim.org/scripts/script.php?script_id=2226</a>
-</p>
 
-<p>
+<li>
 解压至任意位置
-</p>
 
-<p>
-用vim打开vimwiki-2-0-1.vba
-</p>
+<li>
+用Vim打开vimwiki-2-0-1.vba
 
-<p>
+<li>
 执行命令：so %
-</p>
 
-<p>
+<li>
 _vimrc中添加
-</p>
+<pre>
+	set nocompatible
+	filetype plugin on
+	syntax on 
 
-<p>
-set nocompatible
-</p>
+	let g:vimwiki_use_mouse = 1
 
-<p>
-filetype plugin on
-</p>
+	let g:vimwiki_list = [{'path': 'D:/vimwiki/',
+	\ 'path_html': 'D:/vimwiki/html/',
+	\ 'html_header': 'D:/vimwiki/template/header.tpl',}] 
 
-<p>
-syntax on 
-</p>
+	nmap &lt;F5&gt; :Vimwiki2HTML&lt;CR&gt;
+	nmap &lt;F6&gt; :VimwikiAll2HTML&lt;CR&gt;
+</pre>
 
-<p>
-" vimwiki
-</p>
-
-<p>
-" path:存放Vimwiki文件的路径
-</p>
-
-<p>
-" path_html:从Vimwiki转换为html网页时的保存路径
-</p>
-
-<p>
-" html_header:Vimwiki转换网页时使用的网页模板的路径
-</p>
-
-<p>
-let g:vimwiki_use_mouse = 1
-</p>
-
-<p>
-let g:vimwiki_list = [{'path': 'D:/vimwiki/',
-</p>
-
-<p>
-\ 'path_html': 'D:/vimwiki/html/',
-</p>
-
-<p>
-\ 'html_header': 'D:/vimwiki/template/header.tpl',}] 
-</p>
-
-<p>
-nmap &lt;F5&gt; :Vimwiki2HTML&lt;CR&gt;
-</p>
-
-<p>
-nmap &lt;F6&gt; :VimwikiAll2HTML&lt;CR&gt;
-</p>
-
-<p>
+<li>
 重启vim
+
+</ol>
+<p>
+说明：
 </p>
+<ul>
+<li>
+path:存放Vimwiki文件的路径
+
+<li>
+path_html:从Vimwiki转换为html网页时的保存路径
+
+<li>
+html_header:Vimwiki转换网页时使用的网页模板的路径
+
+<li>
+nmap &lt;F5&gt; :Vimwiki2HTML&lt;CR&gt; : 将F5映射到Vimwiki2HTML命令，将当前wiki转换成HTML 。
+
+<li>
+nmap &lt;F6&gt; :VimwikiAll2HTML&lt;CR&gt; : 类似上面，实现F6将所有wiki文件转换成HTML 。
+
+</ul>
 
 <p>
+使用：
+</p>
+<ol>
+<li>
 在Vim的Normal模式下，连续按下 \ww 打开wiki首页
-</p>
 
-<p>
+<li>
 &lt;F6&gt;生成html
-</p>
 
+</ol>
+    
 <p>
 查看vimwiki帮助信息的命令：help vimwiki
 </p>
